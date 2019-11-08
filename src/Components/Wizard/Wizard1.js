@@ -1,64 +1,22 @@
 import React, {Component} from 'react';
 import './Wizard.css';
 import {Link} from 'react-router-dom';
-import axios from 'axios';
+import { connect } from 'react-redux';
+import { updateName, updateAddress, updateCity, updateState, updateZipcode } from '../../ducks/reducer';
 
 
 
-export default class Wizard1 extends Component {
-    constructor() {
-        super()
+class Wizard1 extends Component {
+
+    componentDidMount() {
+        console.log(this.props)
+    }
+
     
-        this.state = {
-            name: '',
-            address: '',
-            city: '',
-            state: '',
-            zipcode: '',
-            image: '', 
-            mortgage: '', 
-            rent: '',
-        }  
-    }
 
-    handleNameChange(e) {
-        this.setState({
-            name: e.target.value
-        })
-    }
-    handleAddressChange(e) {
-        this.setState({
-            address: e.target.value
-        })
-    }
-    handleCityChange(e) {
-        this.setState({
-            city: e.target.value
-        })
-    }
-    handleStateChange(e) {
-        this.setState({
-            state: e.target.value
-        })
-    }
-    handleZipChange(e) {
-        this.setState({
-            zipcode: e.target.value
-        })
-    }
-
-    newHouse() {
-        axios
-            .post('/api/houses', this.state)
-            .then(res => {
-                this.setState({
-                    houses: res.data
-                })
-            this.props.history.push('/')
-            })
-    }
-
-    render() {      
+    render() { 
+        
+        const { updateName, updateAddress, updateCity, updateState, updateZipcode } = this.props;
         return (
             <div className="wizard">
                 <div className="dashboard-flex">
@@ -75,9 +33,9 @@ export default class Wizard1 extends Component {
                     className="input"
                     type="text" 
                     placeholder="Name"
-                    onChange={e => this.handleNameChange(e)}
+                    onChange={e => updateName(e.target.value)}
                     name='name'
-                    value={this.state.name}
+                    // value={this.state.name}
                     />
                 
 
@@ -86,9 +44,9 @@ export default class Wizard1 extends Component {
                     className="input"
                     type="text" 
                     placeholder="Address"
-                    onChange={e => this.handleAddressChange(e)}
+                    onChange={e => updateAddress(e.target.value)}
                     name='address'
-                    value={this.state.address}
+                    // value={this.state.address}
                     />
 
                 <div>City</div>
@@ -96,9 +54,9 @@ export default class Wizard1 extends Component {
                     className="input"
                     type="text" 
                     placeholder="City"
-                    onChange={e => this.handleCityChange(e)}
+                    onChange={e => updateCity(e.target.value)}
                     name='city'
-                    value={this.state.city}
+                    // value={this.state.city}
                     />
 
                 <div>State</div>
@@ -106,9 +64,9 @@ export default class Wizard1 extends Component {
                     className="input"
                     type="text" 
                     placeholder="State"
-                    onChange={e => this.handleStateChange(e)}
+                    onChange={e => updateState(e.target.value)}
                     name='state'
-                    value={this.state.state}
+                    // value={this.state.state}
                     />
 
                 <div>Zip</div>
@@ -116,15 +74,15 @@ export default class Wizard1 extends Component {
                     className="input"
                     type="text" 
                     placeholder="Zipcode"
-                    onChange={e => this.handleZipChange(e)}
+                    onChange={e => updateZipcode(e.target.value)}
                     name='zipcode'
-                    value={this.state.zipcode}
+                    // value={this.state.zipcode}
                     />
             
             
             </div>
 
-            <button className="complete-btn" onClick={() => this.newHouse()}>Complete</button>
+            <button className="complete-btn" onClick={() => this.props.history.push("/")}>Back</button>
             <button className="complete-btn" onClick={() => this.props.history.push("/wizard2")}>Next Step</button>
 
 
@@ -135,3 +93,17 @@ export default class Wizard1 extends Component {
         )
     }
 }
+
+    function mapStateToProps( state ) {
+        const { name, address, city, st, zipcode } = state;
+
+        return {
+            name,
+            address,
+            city, 
+            st, 
+            zipcode
+        };
+    }
+
+export default connect( mapStateToProps, {updateName, updateAddress, updateCity, updateState, updateZipcode } )( Wizard1)

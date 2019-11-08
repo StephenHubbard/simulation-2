@@ -11,9 +11,9 @@ module.exports = {
     }, 
     newHouse: (req, res) => {
         const db = req.app.get('db');
-        const { name, address, city, state, zipcode } = req.body;
+        const { name, address, city, state, zipcode, image, mortgage, rent } = req.body;
     
-        db.new_house([name, address, city, state, zipcode])
+        db.new_house([name, address, city, state, zipcode, image, mortgage, rent])
         .then(() => {
             res.sendStatus(200);
         })

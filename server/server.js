@@ -1,7 +1,6 @@
 require("dotenv").config();
 const express = require("express");
 const massive = require("massive");
-const session = require('express-session');
 const ctrl = require("./controller");
 
 const app = express();
@@ -24,10 +23,3 @@ massive(CONNECTION_STRING)
 })
 .catch(err => console.log(err));
 
-// app.use( 
-//     session({
-//         resave: true,
-//         saveUnitialized: false,
-//         secret: SESSION_SECRET,
-//     })
-// )

@@ -1,19 +1,15 @@
 import React, {Component} from 'react';
 import './Wizard.css';
 import {Link} from 'react-router-dom';
+import { connect } from 'react-redux';
+import { updateImage } from '../../ducks/reducer';
 
 
-export default class Wizard2 extends Component {
-    
-
-    handleImageChange(e) {
-        this.props.setState({
-            name: e.target.value
-        })
-    }
+class Wizard2 extends Component {
 
 
     render() {      
+        const { updateImage } = this.props;
         return (
             <div className="wizard">
 
@@ -29,13 +25,13 @@ export default class Wizard2 extends Component {
                     className="input"
                     type="text" 
                     placeholder="Image Url"
-                    // onChange={e => this.handleImageChange(e)}
+                    onChange={e => updateImage(e.target.value)}
                     name='zipcode'
                     // value={this.state.image}
                     />
 
 
-            <button className="complete-btn" onClick={() => this.props.history.push("/wizard")}>Previous Step</button>
+            <button className="complete-btn" onClick={() => this.props.history.push("/wizard1")}>Previous Step</button>
             <button className="complete-btn" onClick={() => this.props.history.push("/wizard3")}>Next Step</button>
 
 
@@ -43,3 +39,13 @@ export default class Wizard2 extends Component {
         )
     }
 }
+
+function mapStateToProps( state ) {
+    const { image } = state;
+
+    return {
+        image,
+    };
+}
+
+export default connect( mapStateToProps, {updateImage } )( Wizard2)

@@ -3,6 +3,25 @@
     margin: 10px 20px;
 }
 
-h3, h5 {
-    margin: 0px 20px;
+.info-container {
+    margin: 20px;
+}
+
+.house {
+    background-color: gainsboro;
+    width: 80%;
+    margin-left: 50px;
+}
+
+.info-container > h5 {
+    margin: 10px 40px;
+}
+
+img {
+    height: 200px;
+    width: 200px;
+}
+
+h5 {
+    font-size: 18px;
 }
