@@ -1,20 +1,10 @@
 import React, {Component} from 'react';
-// import axios from 'axios';
 import './Header.css';
 
 
 
-export default class Header extends Component {
-    constructor() {
-        super()
-    
-        this.state = {
-            
-        }
-        
-    
-    }
 
+export default class Header extends Component {
     render() {      
         return (
             <header>
