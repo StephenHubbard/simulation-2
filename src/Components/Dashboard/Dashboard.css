@@ -1,0 +1,31 @@
+.dashboard {
+    background-color: #E5F4EC;
+    height: 100%;
+    margin-top: 70px;
+    width: 70vw;
+}
+
+.dashboard-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 50vw;
+}
+
+h1 {
+    margin: 20px;
+}
+
+h3 {
+    margin: 20px;
+}
+
+button {
+    color: black;
+    background-color: #8AEA92;
+    border: none;
+    width: 250px;
+    font-size: 1.4rem;
+    padding: 10px;
+}

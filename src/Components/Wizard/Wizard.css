@@ -1,0 +1,44 @@
+.wizard {
+    background-color: #E5F4EC;
+    height: 90vh;
+    margin-top: 70px;
+    width: 70vw;
+}
+
+.cancel {
+    color: black;
+    background-color: lightpink;
+    border: none;
+    width: 150px;
+    font-size: 1.4rem;
+    padding: 10px;
+}
+
+.input-box-container {
+    width: 50vw;
+    height: 50vh;
+    margin: auto;
+}
+
+.complete-btn {
+    width: 160px;
+    margin-left: 100px;
+    background-color: #3B5249;
+    color: white;
+}
+
+h5 {
+    margin: 50px;
+}
+
+.wizard > div {
+    margin: 10px 50px;
+}
+
+.wizard > input {
+    margin: 10px 50px;
+}
+
+input {
+    width: 700px;
+}

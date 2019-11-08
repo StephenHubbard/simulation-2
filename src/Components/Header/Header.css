@@ -1,0 +1,16 @@
+header {
+    background-color: #519872;
+    min-height: 10vh;
+    width: 100vw;
+    display: flex;
+    font-size: 2rem;
+    color: black;
+    color: white;
+    position: absolute;
+    top: 0px;
+}  
+
+header > h1 {
+    margin: 0;
+    margin-left: 20px;
+}
