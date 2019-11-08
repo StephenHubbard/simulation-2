@@ -24,7 +24,7 @@ class Wizard2 extends Component {
                     <input
                     className="input"
                     type="text" 
-                    placeholder="Image Url"
+                    placeholder={this.props.image}
                     onChange={e => updateImage(e.target.value)}
                     name='zipcode'
                     // value={this.state.image}

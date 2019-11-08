@@ -44,7 +44,7 @@ class Wizard3 extends Component {
                     <input
                     className="input"
                     type="number" 
-                    placeholder="0"
+                    placeholder={this.props.mortgage}
                     onChange={e => updateMortgage(e.target.value)}
                     name='mortgage'
                     // value={this.state.image}
@@ -54,7 +54,7 @@ class Wizard3 extends Component {
                     <input
                     className="input"
                     type="number" 
-                    placeholder="0"
+                    placeholder={this.props.rent}
                     onChange={e => updateRent(e.target.value)}
                     name='rent'
                     // value={this.state.image}

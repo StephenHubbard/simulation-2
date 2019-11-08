@@ -1,6 +1,6 @@
 .delete {
     width: 100px;
-    margin: 10px 20px;
+    margin: 10px 40px;
 }
 
 .info-container {
@@ -13,15 +13,26 @@
     margin-left: 50px;
 }
 
-.info-container > h5 {
+.info-container {
     margin: 10px 40px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 img {
     height: 200px;
     width: 200px;
+    margin: 10px 0px;
 }
 
-h5 {
+.info-box > h5 {
     font-size: 18px;
+    margin: 15px;
+    padding: 0px;
+}
+
+.info-box {
+    height: 200px;
+    width: 400px;
 }

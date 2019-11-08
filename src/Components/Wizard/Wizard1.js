@@ -32,7 +32,7 @@ class Wizard1 extends Component {
                     <input
                     className="input"
                     type="text" 
-                    placeholder="Name"
+                    placeholder={this.props.name}
                     onChange={e => updateName(e.target.value)}
                     name='name'
                     // value={this.state.name}
@@ -43,7 +43,7 @@ class Wizard1 extends Component {
                     <input
                     className="input"
                     type="text" 
-                    placeholder="Address"
+                    placeholder={this.props.address}
                     onChange={e => updateAddress(e.target.value)}
                     name='address'
                     // value={this.state.address}
@@ -53,7 +53,7 @@ class Wizard1 extends Component {
                     <input
                     className="input"
                     type="text" 
-                    placeholder="City"
+                    placeholder={this.props.city}
                     onChange={e => updateCity(e.target.value)}
                     name='city'
                     // value={this.state.city}
@@ -63,7 +63,7 @@ class Wizard1 extends Component {
                     <input
                     className="input"
                     type="text" 
-                    placeholder="State"
+                    placeholder={this.props.st}
                     onChange={e => updateState(e.target.value)}
                     name='state'
                     // value={this.state.state}
@@ -73,7 +73,7 @@ class Wizard1 extends Component {
                     <input
                     className="input"
                     type="text" 
-                    placeholder="Zipcode"
+                    placeholder={this.props.zipcode}
                     onChange={e => updateZipcode(e.target.value)}
                     name='zipcode'
                     // value={this.state.zipcode}
