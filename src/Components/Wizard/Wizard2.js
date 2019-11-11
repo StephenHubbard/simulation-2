@@ -31,8 +31,11 @@ class Wizard2 extends Component {
                     />
 
 
-            <button className="complete-btn" onClick={() => this.props.history.push("/wizard1")}>Previous Step</button>
-            <button className="complete-btn" onClick={() => this.props.history.push("/wizard3")}>Next Step</button>
+            <div className="two-btns">
+                <button className="complete-btn" onClick={() => this.props.history.push("/wizard1")}>Previous Step</button>
+                <button className="complete-btn" onClick={() => this.props.history.push("/wizard3")}>Next Step</button>
+            </div>            
+
 
 
             </div>

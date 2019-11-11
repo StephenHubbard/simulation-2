@@ -59,9 +59,10 @@ class Wizard3 extends Component {
                     name='rent'
                     // value={this.state.image}
                     />
-
-                <button className="complete-btn" onClick={() => this.props.history.push("/wizard2")}>Previous Step</button>
-                <button className="complete-btn" onClick={() => this.newHouse()}>Complete</button>
+                <div className="two-btns">
+                    <button className="complete-btn" onClick={() => this.props.history.push("/wizard2")}>Previous Step</button>
+                    <button className="complete-btn" onClick={() => this.newHouse()}>Complete</button>
+                </div>
             </div>
         )
     }
